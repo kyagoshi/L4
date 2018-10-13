@@ -10,7 +10,6 @@ class TopController < ApplicationController
     def login
         if params[:uid] == "kindai" and params[:pass] == "sanriko"
             session[:uid] = params[:uid]
-            flash[:notice] = session[:uid]
             redirect_to '/'
         else
             render 'error'

@@ -1,6 +1,3 @@
-<% flash.each do |type, msg| %>
-<%= msg %>
-<% end %>
 <%= form_tag '/top/login', method: :post do %>
   <%= label_tag :uid, 'ユーザーID' %>
   <%= text_field_tag :uid %>
