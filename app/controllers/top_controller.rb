@@ -8,10 +8,15 @@ class TopController < ApplicationController
     end
 
     def login
-        if params[:uid] == "kindai" and params[:pass] == "sanriko"
-            session[:uid] = params[:uid]
-            redirect_to '/'
-        else
+        @user = User.all
+        @user.length.times do |i|
+            if params[:uid] == @user[i].uid and params[:pass] == @user[i].pass
+                session[:uid] = params[:uid]
+                flash[:notice] = "ログイン成功！"
+                redirect_to '/'
+            end
+        end
+        if session[:uid].nil?
             render 'error'
         end
     end

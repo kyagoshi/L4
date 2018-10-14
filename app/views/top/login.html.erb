@@ -1,2 +1,5 @@
+<% flash.each do |type, msg| %>
+<%= msg %>
+<% end %>
 <h1><%= "#{session[:uid]}" %>がログイン中です</h1>
 <p><%= link_to 'ログアウト', top_logout_path, method: :post %></p>
