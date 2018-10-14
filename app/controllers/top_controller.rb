@@ -16,4 +16,9 @@ class TopController < ApplicationController
         end
     end
 
+    def logout
+        session.delete(:uid)
+        redirect_to '/'
+    end
+
 end

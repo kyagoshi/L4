@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'top/main'
   post 'top/login'
+  post 'top/logout'
   root 'top#main'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
